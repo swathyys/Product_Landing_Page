@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODUCT NAME</title>
+    <style>
+        /* CSS for Header */
+        header {
+            border-bottom: 2px solid #181817; /* Border style for header */
+            padding-bottom: 10px; /* Optional padding for space below border */
+            text-align: center; /* Center-aligning header content */
+            background-color: #ff9e9e; /* Background color for header */
+            color: #333; /* Text color for header */
+        }
+
+        /* CSS for Footer */
+        footer {
+            border-top: 2px solid hsl(45, 20%, 96%); /* Border style for footer */
+            padding-top: 10px; /* Optional padding for space above border */
+            text-align: center; /* Center-aligning footer content */
+            background-color: hsl(0, 79%, 78%); /* Background color for footer */
+            color: hsl(0, 6%, 7%); /* Text color for footer */
+        }
+
+        /* Flexbox container for sections */
+        .sections-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin: 20px 0;
+        }
+
+        /* Sections */
+        section {
+            flex: 1;
+            max-width: 400px; /* Limit section width */
+            padding: 20px;
+            margin: 10px;
+            border: 1px solid #dad5d5;
+            border-radius: 5px;
+            background-color: rgb(194, 182, 182);
+        }
+
+        /* CSS for Images */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: auto; /* Center-align image */
+        }
+
+        /* CSS for Columns */
+        @media (min-width: 768px) {
+            .sections-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); /* Two columns */
+                gap: 20px; /* Gap between columns */
+            }
+        }
+
+        /* CSS for Image Upload */
+        .image-upload {
+            margin-bottom: 20px;
+        }
+
+        .image-preview {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PRODUCT NAME</h1>
+        <nav>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#recommendation">Recommendation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main container for sections -->
+    <div class="sections-container">
+        <!-- Image Upload Section -->
+        <section class="image-upload">
+            <h2>Upload Image</h2>
+            <input type="file" accept="image/*" onchange="previewImage(event)">
+            <img id="preview" class="image-preview" src="#" alt="Image Preview">
+        </section>
+
+        <!-- Section 1: Features -->
+        <section id="features">
+            <h2>FEATURES</h2>
+            <ul>
+                <li>Feature of the product 1</li>
+                <li>Feature of the product 2</li>
+                <li>Feature of the product 3</li>
+                <li>Feature of the product 4</li>
+                <li>Feature of the product 5</li>
+            </ul>
+        </section>
+
+        <!-- Section 2: About -->
+        <section id="about">
+            <h2>ABOUT US</h2>
+            <p>At [Company Name], we're passionate about [product category]. Our journey began with a simple idea: to create [describe the problem your product solves] for [target audience]. With dedication and innovation, we've developed [Product Name] to offer a solution that exceeds expectations.</p>
+            <p>Our team is comprised of [mention the expertise or diversity of your team members, e.g., experienced engineers, creative designers, passionate marketers], all united by a shared vision to revolutionize the way [target audience] [experience or interact with the product category].</p>
+            <p>What sets us apart is our commitment to excellence in every aspect of our work. From rigorous research and development to meticulous design and user experience testing, we prioritize quality to ensure that [Product Name] not only meets but surpasses your expectations.</p>
+        </section>
+
+        <!-- Section 3: Recommendation -->
+        <section id="recommendation">
+            <h2>RECOMMENDATION</h2>
+            <p>Create an engaging product landing page by clearly articulating your product's value proposition, utilizing an eye-catching design with high-quality visuals, and incorporating a prominent call-to-action (CTA) button. Boost credibility with social proof through testimonials and reviews, ensure mobile responsiveness for seamless browsing, and optimize loading speed for improved user experience. Implement SEO best practices to increase visibility in search results, simplify form fields to encourage user interaction, and establish a clear visual hierarchy to guide visitors' attention. Continuously test and optimize elements through A/B testing to maximize conversion rates and drive sales.</p>
+        </section>
+
+        <!-- Section 4: Contact -->
+        <section id="contact">
+            <h2>CONTACT US</h2>
+            <ul>
+                <li>+91 7890987543</li>
+                <li>brandname@gmail.com</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Product Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for Image Preview
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                var preview = document.getElementById('preview');
+                preview.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+</html>
